@@ -48,10 +48,10 @@ app.diacritics = {
 										},
 										
 										highlighting(...args) {
-																				return ` <mark>${args[2]}</mark>${args[3]}`
+																				return ` <mark>${args[2]}</mark>${args[(app.input.value.match(/\+/g) || []).length + 3]}`
 										}
 }
-    
+
 app.normal = {
 										validate() {
 																				app.input.value = app.ar(app.input.value
