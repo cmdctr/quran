@@ -1,0 +1,348 @@
+:root {
+    --khaki: darkkhaki;
+    --yellow: #ffffb8;
+    --green: #339933;
+    --sand: #fffdf7;
+    --dark: #4d4d00;
+    --khaki-rgb: rgba(189, 183, 107, 0.25);
+    --beige-rgb: rgba(245, 245, 220, 0.6);
+    --icon: .5rem;
+    --radius: .25em;
+    --opacity: .8;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background-color: var(--sand);
+    direction: rtl;
+    text-align: right;
+    color: var(--dark);
+    word-spacing: .2rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    margin: 0 1rem;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    margin: 1em 0;
+    align-items: center;
+}
+
+ol {
+    list-style: arabic-indic inside;
+    margin: 0;
+    padding: 0;
+}
+
+ol li {
+    line-height: 2em;
+    font-family: decotype;
+    font-size: 1.4em;
+    padding: .5rem;
+    margin: 1.5em 0;
+}
+
+ol li:hover {
+    box-shadow: 0 0 0 .5px var(--khaki-rgb);
+    border-radius: var(--radius);
+    transition: border-color .5s ease-in-out, box-shadow .5s ease-in-out;
+    background-color: var(--beige-rgb);
+}
+
+ol li::before {
+    content: '';
+    padding-right: .3rem;
+}
+
+code {
+    line-height: 0;
+    margin: .5em 0 .8em 0;
+    display: flex;
+    justify-content: flex-end;
+    font-family: UrdType;
+    color: crimson;
+    opacity: var(--opacity);
+}
+
+code:hover::before {
+    content: attr(data-tip);
+    padding-left: .5rem;
+}
+
+mark {
+    border: 0;
+    background-color: var(--yellow);
+    color: red;
+}
+
+mark:hover {
+    background-color: var(--khaki);
+    color: white;
+}
+
+#slider {
+    -webkit-appearance: none;
+    appearance: none;
+    direction: ltr;
+    height: .8px;
+    border: 0;
+    outline: 0;
+    width: 20%;
+    background: var(--dark);
+}
+
+#slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: .5rem;
+    height: .5rem;
+    background: var(--dark);
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#slider::-moz-range-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: .5rem;
+    height: .5rem;
+    background: var(--dark);
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#header {
+    margin: 0;
+    padding: 0;
+    font-family: NotoNastaliqUrdu;
+    color: var(--dark);
+}
+
+#header span {
+    width: 100%;
+    text-align: center;
+}
+
+#search {
+    width: 100%;
+    padding: .2rem .5rem;
+    font-size: inherit;
+    font-family: decotype;
+    position: relative;
+    border: 1px solid var(--khaki);
+    border-radius: var(--radius);
+}
+
+#search:focus {
+    outline: none;
+    box-shadow: 0 0 0 1px var(--khaki-rgb);
+    transition: border-color .5s ease-in-out, box-shadow .5s ease-in-out;
+}
+
+#search::placeholder {
+    font-family: decotype;
+}
+
+#stats {
+    font-family: decotype;
+    position: absolute;
+    left: 1.5rem;
+    background-color: white;
+}
+
+#stats:hover::before {
+    content: 'نتيجة/آية';
+    padding-left: .5rem;
+}
+
+#pages button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 1.6em;
+    height: 1.6em;
+    background-color: white;
+    border: .1rem solid var(--khaki);
+    color: var(--khaki);
+    font-size: inherit;
+    padding: 0;
+    margin-right: .2rem;
+    border-radius: .25rem;
+}
+
+#pages button:disabled {
+    background-color: var(--khaki);
+    color: white;
+    cursor: default;
+}
+
+#pages button:disabled:hover {
+    background-color: white;
+    color: var(--khaki);
+    box-shadow: 0 0 0 .1em var(--khaki-rgb);
+}
+
+#top {
+    margin: 1rem 0 0;
+    padding: 0;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+#menu {
+    padding: 0 var(--icon);
+}
+
+#closing {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#close {
+    cursor: pointer;
+    padding: 0 var(--icon);
+}
+
+#modal {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    right: 0;
+    background-color: var(--sand);
+    text-align: right;
+    font-family: decotype;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    outline: .5em solid var(--sand);
+    font-size: 1.2em;
+    border: 0;
+}
+
+#modal::backdrop {
+    background-color: var(--sand);
+}
+
+#modal h4 {
+    margin: 0 0 1.3rem 0;
+    font-weight: normal;
+    font-size: 1.4em;
+}
+
+#modal li {
+    list-style-type: circle;
+    margin: .8em .5em;
+    opacity: var(--opacity);
+}
+
+summary {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    list-style: none;
+    text-align: center;
+    outline: 0;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.2em;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+#arrow {
+    padding: 0 var(--icon);
+}
+
+#expand {
+    margin-bottom: 0;
+}
+
+#inner li:nth-child(1) {
+    margin-top: 0;
+}
+
+#inner h5 {
+    opacity: var(--opacity);
+    margin: .1rem 0;
+    font-size: 1em;
+}
+
+#inner div {
+    padding-right: 1.4em;
+    opacity: var(--opacity);
+}
+
+#inner li {
+    list-style-type: disc;
+}
+
+#loading {
+    padding: 1rem 1rem 0;
+    background-color: rgba(0, 0, 0, 1);
+    opacity: var(--opacity);
+    color: white;
+    outline: 0;
+    border: 0;
+    border-radius: .5rem;
+    text-align: center;
+    box-shadow: 0 .3rem .7rem rgba(0, 0, 0, 0.3);
+    font-size: .8rem;
+}
+
+#loading::backdrop {
+    opacity: 0;
+}
+
+#spinner {
+    margin: auto;
+    width: 2rem;
+    height: 2rem;
+    border: .2rem solid rgba(255, 255, 255, 0.2);
+    border-top: .2rem solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.italic {
+    font-style: italic;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@font-face {
+    font-family: NotoNastaliqUrdu;
+    src: url('../fonts/NotoNastaliqUrdu-Regular.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: UrdType;
+    src: url('../fonts/UrdType.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: decotype;
+    src: url('../fonts/decotype-naskh-variants.ttf') format("truetype");
+}
