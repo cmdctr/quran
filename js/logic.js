@@ -6,7 +6,7 @@ app.searchInAyah = function() {
 										app.filter.marking = new RegExp(`(${app.input.keyword})(?=.+t[^l]+l)`, 'g')
 										
 										app.filter.results = app.scripture[app.mode].filter(obj => {
-																				app.filter.verses = (obj.ayah.trim().match(new RegExp(app.input.keyword, 'g')) || []).length
+																				app.filter.verses = (obj.ayah.match(new RegExp(app.input.keyword, 'g')) || []).length
     											app.filter.total += app.filter.verses
     											return !!app.filter.verses
     	})
