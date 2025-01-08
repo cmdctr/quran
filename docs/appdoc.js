@@ -48,12 +48,12 @@
  *      paginate    FUNCTION
  * 
  * app.diacritics
- *      validate        FUNCTION    // business logic
+ *      validate        FUNCTION    // business logic + presentation layer
  *      filter          FUNCTION    // business logic
  *      highlighting    FUNCTION    // business logic
  * 
  * app.normal
- *      validate        FUNCTION    // business logic
+ *      validate        FUNCTION    // business logic + presentation layer
  *      filter          FUNCTION    // business logic
  *      highlighting    FUNCTION    // business logic
  *

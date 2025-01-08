@@ -17,6 +17,7 @@ app.setHTML = function() {
                 	      ${entry.ayah}<code data-tip="${entry.anum}:${entry.snum}">${entry.surah}:${entry.anum}</code>
                 	</li>
                 	`.replace(app.filter.marking, app[app.mode].highlighting)
+    	             .replace(/[\u06E2\u06ED]/g, '')
     	       )
     	       .join('')
     	   +

@@ -58,7 +58,7 @@ app.normal = {
     																				.replace(/[^\u0621-\u06520-9٠-٩\s\:]/g, '')
     																				.replace(/\s{2,}/g, ' ')
 																				)
-    																				
+																				
 																				app.dom.search.value = app.input.value
 										},
 										

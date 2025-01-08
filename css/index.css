@@ -338,3 +338,8 @@ summary::-webkit-details-marker {
     font-family: decotype;
     src: url('../fonts/decotype-naskh-variants.ttf') format("truetype");
 }
+
+@font-face {
+    font-family: UthmanTN;
+    src: url('../fonts/UthmanTN_v2-0.ttf') format("truetype");
+}
