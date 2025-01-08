@@ -69,7 +69,8 @@ code {
     margin: .5em 0 .8em 0;
     display: flex;
     justify-content: flex-end;
-    font-family: UrdType;
+    font-family: decotype;
+    font-size: .8em;
     color: crimson;
     opacity: var(--opacity);
 }
@@ -124,7 +125,8 @@ mark:hover {
 #header {
     margin: 0;
     padding: 0;
-    font-family: NotoNastaliqUrdu;
+    font-family: decotype;
+    font-size: 1.2em;
     color: var(--dark);
 }
 
@@ -237,7 +239,7 @@ mark:hover {
 #modal h4 {
     margin: 0 0 1.3rem 0;
     font-weight: normal;
-    font-size: 1.4em;
+    font-size: 1.2em;
 }
 
 #modal li {
@@ -330,16 +332,6 @@ summary::-webkit-details-marker {
     100% {
         transform: rotate(360deg);
     }
-}
-
-@font-face {
-    font-family: NotoNastaliqUrdu;
-    src: url('../fonts/NotoNastaliqUrdu-Regular.ttf') format("truetype");
-}
-
-@font-face {
-    font-family: UrdType;
-    src: url('../fonts/UrdType.ttf') format("truetype");
 }
 
 @font-face {
