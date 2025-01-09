@@ -18,6 +18,7 @@ app.setHTML = function() {
                 	</li>
                 	`.replace(app.filter.marking, app[app.mode].highlighting)
     	             .replace(/[\u06E2\u06ED]/g, '')
+    	             .replace(/\u0671/g, '\u0627')
     	       )
     	       .join('')
     	   +
