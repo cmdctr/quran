@@ -23,6 +23,7 @@ html, body {
     word-spacing: .2rem;
     word-wrap: break-word;
     overflow-wrap: break-word;
+    font-family: UthmanTN;
 }
 
 main {
@@ -45,8 +46,7 @@ ol {
 }
 
 ol li {
-    line-height: 2em;
-    font-family: decotype;
+    line-height: 2;
     font-size: 1.4em;
     padding: .5rem;
     margin: 1.5em 0;
@@ -69,7 +69,6 @@ code {
     margin: .5em 0 .8em 0;
     display: flex;
     justify-content: flex-end;
-    font-family: decotype;
     font-size: .8em;
     color: crimson;
     opacity: var(--opacity);
@@ -125,7 +124,6 @@ mark:hover {
 #header {
     margin: 0;
     padding: 0;
-    font-family: decotype;
     font-size: 1.2em;
     color: var(--dark);
 }
@@ -137,9 +135,8 @@ mark:hover {
 
 #search {
     width: 100%;
-    padding: .2rem .5rem;
+    padding: .6rem;
     font-size: inherit;
-    font-family: decotype;
     position: relative;
     border: 1px solid var(--khaki);
     border-radius: var(--radius);
@@ -151,12 +148,7 @@ mark:hover {
     transition: border-color .5s ease-in-out, box-shadow .5s ease-in-out;
 }
 
-#search::placeholder {
-    font-family: decotype;
-}
-
 #stats {
-    font-family: decotype;
     position: absolute;
     left: 1.5rem;
     background-color: white;
@@ -224,7 +216,6 @@ mark:hover {
     right: 0;
     background-color: var(--sand);
     text-align: right;
-    font-family: decotype;
     word-wrap: break-word;
     overflow-wrap: break-word;
     outline: .5em solid var(--sand);
@@ -332,11 +323,6 @@ summary::-webkit-details-marker {
     100% {
         transform: rotate(360deg);
     }
-}
-
-@font-face {
-    font-family: decotype;
-    src: url('../fonts/decotype-naskh-variants.ttf') format("truetype");
 }
 
 @font-face {
