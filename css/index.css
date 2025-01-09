@@ -69,6 +69,7 @@ code {
     margin: .5em 0 .8em 0;
     display: flex;
     justify-content: flex-end;
+    font-family: UthmanTN;
     font-size: .8em;
     color: crimson;
     opacity: var(--opacity);
@@ -135,11 +136,12 @@ mark:hover {
 
 #search {
     width: 100%;
-    padding: .6rem;
+    padding: .3rem .5rem;
     font-size: inherit;
     position: relative;
     border: 1px solid var(--khaki);
     border-radius: var(--radius);
+    font-family: UthmanTN;
 }
 
 #search:focus {
