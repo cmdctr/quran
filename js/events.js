@@ -1,16 +1,18 @@
 import app from './view.js'
 
 app.dispatchInput = async function({ target }) {
-    app.input.value = target.value.trimLeft()
-    app.input.firstletter = app.input.value.charAt(0)
+										app.input.value = target.value.replace(/^\s{2,}/, ' ')
 										
-										app.mode = /[\u0621-\u064A0-9٠-٩:]/.test(app.input.firstletter) ? 'normal' : /[\u064B-\u0652\+\-]/.test(app.input.firstletter) ? 'diacritics' : false
+    app.input.firstletter = app.input.value.trimLeft().slice(0, 1)
+										if (!app.input.firstletter) return app.resetHTML()
 										
+										app.mode = /[\u0621-\u064A\u06D4-\u06ED\:0-9٠-٩]/.test(app.input.firstletter) ? 'normal' : /[\u064B-\u0652\+\-]/.test(app.input.firstletter) ? 'diacritics' : false
 										if (!app.mode) return app.resetHTML()
 										
     app[app.mode].validate()
 										
     if (app.input.value === app.input.lastvalue) return
+										
     app.input.lastvalue = app.input.value
     
     if (!app.scripture[app.mode]) {

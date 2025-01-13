@@ -1,7 +1,8 @@
 import app from './logic.js'
 
 app.resetHTML = function() {
-    	app.dom.search.value = ''
+    	app.dom.search.value = app.input.value.replace(/\S/, '')
+    	
     	; ['stats', 'content', 'pages'].forEach(element => app.dom[element].innerHTML = '')
 										
 										app.input.lastvalue = app.input.value
@@ -11,7 +12,8 @@ app.setHTML = function() {
     	app.dom.content.innerHTML = (
     	   `<ol start="${+app.pages.start + 1}">`
     	   +
-    	   app.filter.results.slice(app.pages.start, app.pages.end)
+    	   app.filter.results
+    	       .slice(app.pages.start, app.pages.end)
     	       .map(entry =>
                 	`<li>
                 	      ${entry.ayah}<code data-tip="${entry.anum}:${entry.snum}">${entry.surah}:${entry.anum}</code>

@@ -33,14 +33,13 @@ app.searchInTitle = function() {
 app.diacritics = {
 										validate() {
 																				app.input.value = app.ar(app.input.value
-																				    .replace(/[^\u064B-\u0652\s\+\-]/g, '')
-																				    .replace(/\s/g, '')
+																				    .replace(/[^\u064B-\u0652\+\-]/g, '')
 																				)
 																				
 																				app.dom.search.value = '   ' + app.input.value
     																				.replace(/(\S)/g, '$1   ')
     																				.replace(/\s{4,}/g, '   ')
-    																				.trimRight()
+																				    .trimRight()
 										},
 										
 										filter() {
@@ -55,7 +54,7 @@ app.diacritics = {
 app.normal = {
 										validate() {
 																				app.input.value = app.ar(app.input.value
-    																				.replace(/[^\u0621-\u06520-9٠-٩\s\:]/g, '')
+    																				.replace(/[^\u0621-\u0653\:\u06D4-\u06ED\s0-9٠-٩]/g, '')
     																				.replace(/\s{2,}/g, ' ')
 																				)
 																				

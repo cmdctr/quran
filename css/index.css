@@ -20,10 +20,10 @@ html, body {
     direction: rtl;
     text-align: right;
     color: var(--dark);
-    word-spacing: .2rem;
     word-wrap: break-word;
     overflow-wrap: break-word;
     font-family: UthmanTN;
+    word-spacing: .2rem;
 }
 
 main {
@@ -50,6 +50,7 @@ ol li {
     font-size: 1.4em;
     padding: .5rem;
     margin: 1.5em 0;
+    letter-spacing: .1px;
 }
 
 ol li:hover {
@@ -81,7 +82,6 @@ code:hover::before {
 }
 
 mark {
-    border: 0;
     background-color: var(--yellow);
     color: red;
 }
