@@ -1,6 +1,6 @@
 # البحث في القرآن الكريم
 
-هذا التطبيق يوفر عدة طرق بحث في المصحف الشريف لتسهيل العثور على الآيات: البحث عن كلمة غير مشكولة، البحث عن كلمة مشكولة، أو عن كلمة مطابقة لنمط تشكيل معين. أيضا البحث عن سورة معينة بالاسم أو الرقم.
+هذا التطبيق يوفر عدة طرق بحث في المصحف الشريف لتسهيل العثور على الآيات: البحث عن كلمة مشكولة أو غير مشكولة، البحث عن كلمة مطابقة لنمط تشكيل معين، أو البحث عن سورة أو إحدى آياتها بالاسم أو الرقم.
 
 ---
 
@@ -20,15 +20,15 @@
   - `كَذَّبُوا`
 
 ### ٣. البحث باسم السورة أو رقمها
-- جميع آيات السورة باستخدام اسمها أو رقمها مع رقم الآية اختياريا.  
+- استخدام اسم السورة أو رقمها مع رقم الآية اختياريا.  
   أمثلة:  
   - `تو:` أو `٩:` ← جميع آيات سورة التوبة.  
   - `تو:٥` أو `٥:٩` ← الآية ٥ من سورة التوبة.  
   - `:` ← جميع آيات القرآن.  
-  - `:٣` ← الآية الثالثة من جميع السور.
+  - `:٣` ← الآية ٣ في جميع السور.
 
 ### ٤. البحث بأنماط التشكيل
-- ابحث عن الكلمات التي تطابق أنماط تشكيل محددة.  
+- الكلمات التي تطابق أنماط تشكيل محددة.  
   مثال:  
   - `◌َ ◌ّ ◌ُ ◌َ` تطابق `رَبُّكَ`.
 
@@ -55,7 +55,7 @@
      - `- ◌ِ ◌ِ - ◌َ` تطابق `آمِنِينَ`.
 
 ٢. **رمز `+`**  
-   - يطابق أي حرف أو رمز، بما في ذلك جميع التشكيلات، الحالات الخاصة، والحروف التي تتبع الشدة.
+   - يطابق أي حرف أو رمز: بما في ذلك جميع التشكيلات، الحالات الخاصة، والحروف التي تتبع الشدة.
 
 ---
 
@@ -69,13 +69,13 @@
 - **التنوين** يسبق الألف.  
   مثال: `◌ُ ◌ْ ◌َ - ◌ً -` تطابق `سُلْطَانًا`.
 
+
 ---
-***
-___
+
 
 # Quran Search App
 
-This app allows you to search the Quran by plain text, text with diacritics, or using diacritic patterns to find matching text.
+This app allows users to search the Holy Quran using various methods, including plain text, text with diacritics, or using diacritic patterns to find matching text.
 
 ---
 
@@ -98,8 +98,9 @@ This app allows you to search the Quran by plain text, text with diacritics, or 
 - Find all verses of a Surah by name or number.  
   Examples:  
   - `9:` or `تو:` → All verses of Surah Al-Tawbah.  
-  - `9:5` or `تو:5` → Verse 5 of Surah At-Tawbah.  
+  - `9:5` or `تو:5` → Verse 5 of Surah Al-Tawbah.  
   - `:` → All verses of the Quran.
+  - `:3` → Verse 3 of every Surah.
 
 ### 4. Search by Diacritic Patterns
 - Find words matching specific diacritic patterns.  
@@ -136,9 +137,9 @@ The app supports the following diacritics:
 ## Notes on Diacritic Usage
 - The **Shadda** is treated as a diacritic, and its associated vowel is treated as a second diacritic.  
   Example: `◌ُ ◌ّ ◌َ` matches `ثُمَّ`.
-- The **solar letter** (ال الشمسية) is always followed by a Shadda.  
+- The **solar letter (ال الشمسية)** is always followed by a Shadda.  
   Example: `- - ◌ّ ◌َ ◌ْ` matches `الشَّمْس`.  
-  The **lunar letter** (ال القمرية) has a silent Lam.  
+  The **lunar letter (ال القمرية)** has a Sakin Lam.  
   Example: `- ◌ْ ◌َ ◌َ` matches `الْقَمَر`.
 - **Tanween** precedes the Alif.  
   Example: `◌ُ ◌ْ ◌َ - ◌ً -` matches `سُلْطَانًا`.
