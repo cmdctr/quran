@@ -1,4 +1,53 @@
 /**
+ * Adjusts the font size of all eligible elements on the page based on user interaction.
+ * 
+ * This function creates a font adjustment utility. It selects all elements on the page
+ * (excluding certain tags such as HTML, BODY, MAIN, and elements with the "noslide" css class),
+ * stores their original font sizes in a `data-size` attribute, and allows their font sizes 
+ * to be dynamically increased or decreased.
+ * 
+ * @function fontAdjuster
+ * @returns {function} A callback function that can be attached to events (e.g., click) to adjust font sizes.
+ * 
+ * @example
+ * // Initialize the font adjuster
+ * const adjustFontSize = fontAdjuster();
+ * 
+ * // Attach the returned function to buttons with IDs 'increase' and 'decrease'
+ * document.getElementById('increase').addEventListener('click', adjustFontSize);
+ * document.getElementById('decrease').addEventListener('click', adjustFontSize);
+ * 
+ * @description
+ * - The font size of each eligible element is scaled proportionally based on its original font size.
+ * - The adjustment is triggered by a target element's ID ('increase' to enlarge, 'decrease' to shrink).
+ * - Font size is capped between 1.0x and 2.0x of the original size.
+ */
+export function fontAdjuster() {
+    const elements = Array.from(document.querySelectorAll('*')).reduce((newarray, element) => {
+        if (
+            !['HTML', 'BODY', 'MAIN', 'DIALOG', 'HEAD', 'META', 'TITLE', 'SCRIPT', 'STYLE', 'LINK'].includes(element.tagName) &&
+            !element.classList.contains('noslide')
+        ) {
+            element.setAttribute('data-size', parseFloat(window.getComputedStyle(element).fontSize))
+            newarray.push(element)
+        }
+        return newarray
+    }, [])
+    
+    let scaleFactor = 1
+    
+    return function({ target }) {
+        scaleFactor += target.id === 'increase' && scaleFactor < 1.9 ? 0.2 : target.id === 'decrease' && scaleFactor > 1 ? -0.2 : 0
+        
+        if (scaleFactor == 0) return
+        
+        elements.forEach(element => {
+            element.style.fontSize = (element.getAttribute('data-size') * parseFloat(scaleFactor)) + 'px'
+        })
+    }
+}
+
+/**
  * Creates a slider function to dynamically adjust font sizes of specific elements on the page.
  *
  * This function scans the DOM and identifies all elements except for a predefined set of
@@ -14,15 +63,15 @@
  *
  * @example
  * // Initialize the slider adjustment function
- * const adjustFontSize = slider();
+ * const adjustFontSize = fontSlider();
  * 
  * // Attach the returned function to an input slider
  * document.querySelector('#slider').addEventListener('input', adjustFontSize);
  *
  * // HTML example:
- * // <input type="range" id="slider" min="1" max="2" step="0.1" value="1">
+ * // <input type="range" id="slider" min="1" max="2" step="0.2" value="1">
  */
-function slider() {
+function fontSlider() {
     const elements = Array.from(document.querySelectorAll('*')).reduce((newarray, element) => {
         if (
             !['HTML', 'BODY', 'MAIN', 'DIALOG', 'HEAD', 'META', 'TITLE', 'SCRIPT', 'STYLE', 'LINK'].includes(element.tagName) &&

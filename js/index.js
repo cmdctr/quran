@@ -10,6 +10,6 @@ app.dom.close.onclick = app.dispatchHelp
 
 app.dom.inner.ontoggle = app.dispatchDetails
 
-app.dom.slider.oninput = app.dispatchSlider
+app.dom.adjuster.onclick = app.dispatchAdjuster
 
 app.dom.search.dispatchEvent(new Event('input'))

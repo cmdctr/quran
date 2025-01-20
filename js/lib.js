@@ -1,4 +1,29 @@
-export function slider() {
+export function fontAdjuster() {
+    const elements = Array.from(document.querySelectorAll('*')).reduce((newarray, element) => {
+        if (
+            !['HTML', 'BODY', 'MAIN', 'DIALOG', 'HEAD', 'META', 'TITLE', 'SCRIPT', 'STYLE', 'LINK'].includes(element.tagName) &&
+            !element.classList.contains('noslide')
+        ) {
+            element.setAttribute('data-size', parseFloat(window.getComputedStyle(element).fontSize))
+            newarray.push(element)
+        }
+        return newarray
+    }, [])
+    
+    let scaleFactor = 1
+    
+    return function({ target }) {
+        scaleFactor += target.id === 'increase' && scaleFactor < 1.9 ? 0.2 : target.id === 'decrease' && scaleFactor > 1 ? -0.2 : 0
+        
+        if (scaleFactor == 0) return
+        
+        elements.forEach(element => {
+            element.style.fontSize = (element.getAttribute('data-size') * parseFloat(scaleFactor)) + 'px'
+        })
+    }
+}
+
+export function fontSlider() {
     const elements = Array.from(document.querySelectorAll('*')).reduce((newarray, element) => {
         if (
             !['HTML', 'BODY', 'MAIN', 'DIALOG', 'HEAD', 'META', 'TITLE', 'SCRIPT', 'STYLE', 'LINK'].includes(element.tagName) &&

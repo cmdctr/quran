@@ -47,6 +47,7 @@ app.dispatchPage = function({ target }) {
 app.dispatchHelp = function() {
 										document.body.classList.toggle('no-scroll')
 										app.dom.modal.open ? app.dom.modal.close() : app.dom.modal.showModal()
+										app.dom.modal.scrollTo({ top: 0 })
 }
 
 app.dispatchDetails = function({ target }) {
@@ -54,6 +55,6 @@ app.dispatchDetails = function({ target }) {
 										app.dom.arrow.textContent = target.open ? '↑' : '↓'
 }
 
-app.dispatchSlider = app.slider()
+app.dispatchAdjuster = app.fontAdjuster()
 
 export default app

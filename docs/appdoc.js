@@ -15,12 +15,13 @@
  *      stats       SPAN
  *      close       SPAN
  *      arrow       SPAN
- *      slider      INPUT type=range
  *      search      INPUT type=text
  *      modal       DIALOG
  *      loading     DIALOG
  *      inner       DETAILS
- * 
+ *      adjuster    DIV
+ *      expand      LI
+ *
  * app.scripture
  *      db          OBJECT  // { set, get }
  *      response    PROMISE // fetch response
@@ -64,7 +65,7 @@
  * 
  * @events
  * app.dom.search.oninput
- * app.dom.slider.oninput
+ * app.dom.adjuster.onclick
  * app.dom.pages.onclick
  * app.dom.menu.onclick
  * app.dom.close.onclick

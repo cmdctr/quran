@@ -2,7 +2,7 @@ import * as lib from './lib.js'
 
 const app = { ...lib }
 
-app.dom = app.getElementsById('expand', 'menu', 'modal', 'close', 'search', 'stats', 'content', 'pages', 'loading', 'inner', 'arrow', 'slider')
+app.dom = app.getElementsById('adjuster', 'expand', 'menu', 'modal', 'close', 'search', 'stats', 'content', 'pages', 'loading', 'inner', 'arrow')
 
 app.pages = app.pagination()
 

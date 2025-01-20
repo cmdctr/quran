@@ -91,35 +91,39 @@ mark:hover {
     color: white;
 }
 
-#slider {
-    -webkit-appearance: none;
-    appearance: none;
-    direction: ltr;
-    height: .8px;
-    border: 0;
-    outline: 0;
-    width: 20%;
-    background: var(--dark);
+#adjuster {
+    display: flex;
 }
 
-#slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: .5rem;
-    height: .5rem;
-    background: var(--dark);
+#adjuster button {
+    padding: 0;
+    border: none;
+    background-color: var(--sand);
+    color: var(--dark);
     cursor: pointer;
-    border-radius: 50%;
+    transition: all .3s ease;
 }
 
-#slider::-moz-range-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: .5rem;
-    height: .5rem;
-    background: var(--dark);
-    cursor: pointer;
-    border-radius: 50%;
+#adjuster button:active {
+    transform: scale(1.6);
+}
+
+#increase {
+    font-size: 1em;
+}
+
+#decrease {
+    font-size: .7em;
+    margin-top: .3em;
+}
+
+#increase:hover::before {
+    content: '+';
+    font-size: .6em;
+}
+
+#decrease:hover::before {
+    content: '-';
 }
 
 #header {
@@ -193,11 +197,11 @@ mark:hover {
     margin: 1rem 0 0;
     padding: 0;
     justify-content: space-between;
-    cursor: pointer;
 }
 
 #menu {
     padding: 0 var(--icon);
+    cursor: pointer;
 }
 
 #closing {
