@@ -57,4 +57,9 @@ app.dispatchDetails = function({ target }) {
 
 app.dispatchAdjuster = app.fontAdjuster()
 
+app.dispatchApp = function() {
+										app.dom.search.value = decodeURIComponent(window.location.search.slice(1).replace(/\+/g, ' '))
+    app.dom.search.dispatchEvent(new Event('input'))
+}
+
 export default app

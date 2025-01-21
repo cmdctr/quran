@@ -70,5 +70,6 @@
  * app.dom.menu.onclick
  * app.dom.close.onclick
  * app.dom.inner.ontoggle
+ * window.onload
  * 
  */

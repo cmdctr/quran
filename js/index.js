@@ -12,4 +12,4 @@ app.dom.inner.ontoggle = app.dispatchDetails
 
 app.dom.adjuster.onclick = app.dispatchAdjuster
 
-app.dom.search.dispatchEvent(new Event('input'))
+window.onload = app.dispatchApp
